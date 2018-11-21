@@ -36,6 +36,9 @@ exports.default = function (_ref) {
               var localFile = file.opts.filename;
               var newImport = parentPath.node;
               var importName = parentPath.get('arguments')[0].node.value;
+              if (!importName) {
+                return;
+              }
               var requiredFile = (0, _utils.encipherImport)(resolveImport(importName, localFile));
 
               var replace = null;
